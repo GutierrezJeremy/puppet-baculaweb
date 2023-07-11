@@ -1,0 +1,444 @@
+{
+  "tags": [
+    "settings",
+    "baculaweb",
+    "baculaweb::install",
+    "install",
+    "baculaweb::config",
+    "config",
+    "class"
+  ],
+  "name": "mnb-jgutierrez.fritz.box",
+  "version": 1689081301,
+  "code_id": null,
+  "catalog_uuid": "35e19267-7a6a-4480-9af7-9e4cf75f7f17",
+  "catalog_format": 2,
+  "environment": "rp_env",
+  "resources": [
+    {
+      "type": "Stage",
+      "title": "main",
+      "tags": [
+        "stage"
+      ],
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "name": "main"
+      }
+    },
+    {
+      "type": "Class",
+      "title": "Settings",
+      "tags": [
+        "class",
+        "settings"
+      ],
+      "exported": false,
+      "kind": "unknown"
+    },
+    {
+      "type": "Class",
+      "title": "main",
+      "tags": [
+        "class"
+      ],
+      "exported": false,
+      "kind": "unknown",
+      "parameters": {
+        "name": "main"
+      }
+    },
+    {
+      "type": "Class",
+      "title": "Baculaweb",
+      "tags": [
+        "class",
+        "baculaweb"
+      ],
+      "exported": false,
+      "kind": "unknown",
+      "parameters": {
+        "version": "8.6.3",
+        "user": "apache",
+        "group": "apache",
+        "extract_base_dir": "/opt/bacula-web",
+        "data_dir": "/opt/bacula-web/data",
+        "mirror_base_url": "https://github.com/bacula-web/bacula-web/releases/download",
+        "archive_symlink_to_root_dir": true,
+        "data_dir_symlink": true,
+        "root_dir": "/var/www/html/bacula-web",
+        "show_inactive_clients": true,
+        "hide_empty_pools": true,
+        "datetime_format": "Y-m-d H:i:s",
+        "enable_users_auth": true,
+        "debug": false,
+        "language": "en_US",
+        "catalog_db": [
+          {
+            "label": "foo.example.com",
+            "db_name": "/path/to/database",
+            "db_type": "sqlite"
+          }
+        ],
+        "archive_name": "bacula-web-8.6.3.tgz",
+        "data_dir_assets_protected_path": "/opt/bacula-web/data/protected",
+        "archive_path": "/opt/bacula-web/bacula-web-8.6.3.tgz",
+        "mirror": "https://github.com/bacula-web/bacula-web/releases/download/v8.6.3/bacula-web-8.6.3.tgz",
+        "extract_dir": "/opt/bacula-web/v8.6.3",
+        "extract_creates": "/opt/bacula-web/v8.6.3/bacula-web-8.6.3",
+        "config_path": "/var/www/html/bacula-web/application/config/config.php",
+        "cache_path": "/var/www/html/bacula-web/application/views/cache",
+        "assets_protected_path": "/var/www/html/bacula-web/application/assets/protected"
+      }
+    },
+    {
+      "type": "Class",
+      "title": "Baculaweb::Install",
+      "tags": [
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "exported": false,
+      "kind": "unknown",
+      "parameters": {
+        "before": [
+          "Class[Baculaweb::Config]"
+        ]
+      }
+    },
+    {
+      "type": "File",
+      "title": "/opt/bacula-web",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 7,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "directory",
+        "recurse": true,
+        "max_files": -1
+      }
+    },
+    {
+      "type": "File",
+      "title": "/opt/bacula-web/v8.6.3",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 7,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "directory",
+        "recurse": true,
+        "max_files": -1
+      }
+    },
+    {
+      "type": "File",
+      "title": "/opt/bacula-web/data",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 7,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "directory",
+        "recurse": true,
+        "max_files": -1
+      }
+    },
+    {
+      "type": "File",
+      "title": "/opt/bacula-web/data/protected",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 17,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "directory",
+        "owner": "apache",
+        "mode": "0755",
+        "max_files": -1
+      }
+    },
+    {
+      "type": "Archive",
+      "title": "/opt/bacula-web/bacula-web-8.6.3.tgz",
+      "tags": [
+        "archive",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 26,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "source": "https://github.com/bacula-web/bacula-web/releases/download/v8.6.3/bacula-web-8.6.3.tgz",
+        "extract": true,
+        "extract_path": "/opt/bacula-web/v8.6.3",
+        "extract_flags": "-x --no-same-owner -f",
+        "creates": "/opt/bacula-web/v8.6.3/bacula-web-8.6.3",
+        "cleanup": true,
+        "require": "File[/opt/bacula-web/v8.6.3]"
+      }
+    },
+    {
+      "type": "File",
+      "title": "/var/www/html/bacula-web",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 37,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "link",
+        "target": "/opt/bacula-web/v8.6.3/bacula-web-8.6.3",
+        "owner": "apache",
+        "group": "apache",
+        "require": "Archive[/opt/bacula-web/bacula-web-8.6.3.tgz]"
+      }
+    },
+    {
+      "type": "File",
+      "title": "/opt/bacula-web/data/protected/.htaccess",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 47,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "file",
+        "source": "puppet:///modules/baculaweb/htaccess_protected.epp",
+        "mode": "0644"
+      }
+    },
+    {
+      "type": "File",
+      "title": "/opt/bacula-web/data/protected/application.db",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 55,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "ensure": "file",
+        "replace": "no",
+        "source": "puppet:///modules/baculaweb/application.db",
+        "owner": "apache",
+        "group": "apache",
+        "mode": "0644",
+        "require": "File[/opt/bacula-web/data/protected]"
+      }
+    },
+    {
+      "type": "File",
+      "title": "symlink_{/var/www/html/bacula-web/application/assets/protected}",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::install",
+        "baculaweb",
+        "install"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/install.pp",
+      "line": 65,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "path": "/var/www/html/bacula-web/application/assets/protected",
+        "ensure": "link",
+        "force": true,
+        "target": "/opt/bacula-web/data/protected",
+        "owner": "apache",
+        "group": "apache",
+        "mode": "0755",
+        "require": [
+          "File[/opt/bacula-web/data/protected]",
+          "File[/var/www/html/bacula-web]",
+          "File[/opt/bacula-web/data/protected/.htaccess]"
+        ]
+      }
+    },
+    {
+      "type": "Class",
+      "title": "Baculaweb::Config",
+      "tags": [
+        "class",
+        "baculaweb::config",
+        "baculaweb",
+        "config"
+      ],
+      "exported": false,
+      "kind": "unknown"
+    },
+    {
+      "type": "File",
+      "title": "/var/www/html/bacula-web/application/views/cache",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::config",
+        "baculaweb",
+        "config"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/config.pp",
+      "line": 7,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "mode": "0755",
+        "owner": "apache"
+      }
+    },
+    {
+      "type": "File",
+      "title": "/var/www/html/bacula-web/application/config/config.php",
+      "tags": [
+        "file",
+        "class",
+        "baculaweb::config",
+        "baculaweb",
+        "config"
+      ],
+      "file": "/home/jgutierrez/Git/Github/puppet-baculaweb/spec/fixtures/modules/baculaweb/manifests/config.pp",
+      "line": 14,
+      "exported": false,
+      "kind": "compilable_type",
+      "parameters": {
+        "content": "<?php\n// Show inactive clients (false by default)\n$config['show_inactive_clients'] = true;\n\n// Hide empty pools (displayed by default)\n$config['hide_empty_pools'] = true;\n\n// Custom datetime format (by default: Y-m-d H:i:s)\n// Examples\n// $config['datetime_format'] = 'd/m/Y H:i:s';\n$config['datetime_format'] = 'Y-m-d H:i:s';\n\n// Security\n$config['enable_users_auth'] = true;\n\n// Debug mode\n$config['debug'] = false;\n\n// Translations\n$config['language'] = 'en_US';\n\n// Database connection parameters\n$config[0] = [\n  'label' => 'foo.example.com',\n  'db_name' => '/path/to/database',\n  'db_type' => 'sqlite',\n];\n",
+        "owner": "apache",
+        "group": "apache"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "Stage[main]",
+      "target": "Class[Settings]"
+    },
+    {
+      "source": "Stage[main]",
+      "target": "Class[main]"
+    },
+    {
+      "source": "Stage[main]",
+      "target": "Class[Baculaweb]"
+    },
+    {
+      "source": "Stage[main]",
+      "target": "Class[Baculaweb::Install]"
+    },
+    {
+      "source": "Class[Baculaweb]",
+      "target": "Class[Baculaweb::Install]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/opt/bacula-web]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/opt/bacula-web/v8.6.3]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/opt/bacula-web/data]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/opt/bacula-web/data/protected]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "Archive[/opt/bacula-web/bacula-web-8.6.3.tgz]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/var/www/html/bacula-web]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/opt/bacula-web/data/protected/.htaccess]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[/opt/bacula-web/data/protected/application.db]"
+    },
+    {
+      "source": "Class[Baculaweb::Install]",
+      "target": "File[symlink_{/var/www/html/bacula-web/application/assets/protected}]"
+    },
+    {
+      "source": "Stage[main]",
+      "target": "Class[Baculaweb::Config]"
+    },
+    {
+      "source": "Class[Baculaweb]",
+      "target": "Class[Baculaweb::Config]"
+    },
+    {
+      "source": "Class[Baculaweb::Config]",
+      "target": "File[/var/www/html/bacula-web/application/views/cache]"
+    },
+    {
+      "source": "Class[Baculaweb::Config]",
+      "target": "File[/var/www/html/bacula-web/application/config/config.php]"
+    }
+  ],
+  "classes": [
+    "settings",
+    "baculaweb",
+    "baculaweb::install",
+    "baculaweb::config"
+  ]
+}
